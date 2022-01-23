@@ -43,16 +43,23 @@ namespace LineComparision
            
          double Length_SR = Math.Sqrt(Math.Pow((S_Two - S_One), 2) + Math.Pow((R_Two - R_One), 2));
          Console.WriteLine("Length of Line 2 is: " + Length_SR);
-            
-         bool equal_result = Length_XY.Equals(Length_SR);
-                     
-         if (equal_result == false)
-                Console.WriteLine(" Length of XY and Length of SR are NOT Equal");
-         else
-                Console.WriteLine("Length of XY and Length of SR are Equal");
-         Console.ReadKey();
 
-        Console.ReadLine();        
+            double Differene = Length_XY.CompareTo(Length_SR);
+            if (Differene < 0)
+            {
+                Console.WriteLine("Length of XY is less than Length of SR");
+            }
+            if (Differene > 0)
+            {
+                Console.WriteLine("Length of XY is greater than Length of SR");
+            }
+            if (Differene == 0)
+            {
+                Console.WriteLine("Length of XY is equal to Length of SR");
+            }
+            Console.ReadKey();
+
+            Console.ReadLine();        
         }
     }
 }
